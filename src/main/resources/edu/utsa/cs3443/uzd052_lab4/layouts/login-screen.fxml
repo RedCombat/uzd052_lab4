@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.utsa.cs3443.uzd052_lab4.LoginScreenController"
+      style="-fx-background-color: #f0f4f8;">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <!-- Logo Section -->
+    <VBox alignment="CENTER" spacing="10.0">
+        <ImageView fitHeight="80.0" fitWidth="80.0" preserveRatio="true">
+            <image>
+                <Image url="@../images/logo.png"/>
+            </image>
+        </ImageView>
+        <Label text="GERO Aid Ship Management" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label text="Login to Continue" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+    </VBox>
+
+    <!-- Login Form -->
+    <VBox spacing="15.0" maxWidth="350.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+        </padding>
+
+        <Label text="Username" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <TextField fx:id="usernameField" promptText="Enter username" 
+                   style="-fx-background-radius: 5; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-padding: 10;"/>
+
+        <Label text="Password" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Label>
+        <PasswordField fx:id="passwordField" promptText="Enter password"
+                       style="-fx-background-radius: 5; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-padding: 10;"/>
+
+        <Label fx:id="errorLabel" text="Error message" 
+               style="-fx-text-fill: #e74c3c; -fx-font-size: 12px;" visible="false">
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+        </Label>
+
+        <Button text="Login" onAction="#onLoginButtonClick" maxWidth="Infinity"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 12; -fx-cursor: hand;">
+            <VBox.margin>
+                <Insets top="15.0"/>
+            </VBox.margin>
+        </Button>
+    </VBox>
+
+    <Label text="© 2025 GERO Organization" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6;">
+        <VBox.margin>
+            <Insets top="20.0"/>
+        </VBox.margin>
+    </Label>
+</VBox>
