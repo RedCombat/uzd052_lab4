@@ -9,8 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Represents a user in the aid ship management system.
- * Extends Person with authentication credentials.
+ * Represents a user in the aid ship management system
+ * Extends Person with authentication credentials
  * 
  * @author uzd052
  */
@@ -19,14 +19,14 @@ public class User extends Person {
     private String password;
 
     /**
-     * Default constructor.
+     * Default constructor
      */
     public User() {
         super();
     }
 
     /**
-     * Constructs a User with specified parameters.
+     * Constructs a User with specified parameters
      * 
      * @param firstName the first name
      * @param lastName the last name
@@ -43,7 +43,7 @@ public class User extends Person {
     }
 
     /**
-     * Gets the username.
+     * Gets the username
      * 
      * @return the username
      */
@@ -52,7 +52,7 @@ public class User extends Person {
     }
 
     /**
-     * Sets the username.
+     * Sets the username
      * 
      * @param username the username
      */
@@ -61,7 +61,7 @@ public class User extends Person {
     }
 
     /**
-     * Gets the password.
+     * Gets the password
      * 
      * @return the password
      */
@@ -70,7 +70,7 @@ public class User extends Person {
     }
 
     /**
-     * Sets the password.
+     * Sets the password
      * 
      * @param password the password
      */
@@ -79,8 +79,8 @@ public class User extends Person {
     }
 
     /**
-     * Authenticates a user with the provided credentials.
-     * Loads user data from the CSV file and searches for a matching user.
+     * Authenticates a user with the provided credentials
+     * Loads user data from the CSV file and searches for a matching user
      * 
      * @param username the username to authenticate
      * @param password the password to verify
@@ -93,7 +93,6 @@ public class User extends Person {
             return null;
         }
 
-        // Resolve the users.csv file robustly and provide a clear error if missing
         Path usersPath = Paths.get("data", "users.csv").toAbsolutePath();
         if (!Files.exists(usersPath)) {
             throw new FileNotFoundException("Users file not found at: " + usersPath);
@@ -102,7 +101,7 @@ public class User extends Person {
         try (BufferedReader br = Files.newBufferedReader(usersPath, StandardCharsets.UTF_8)) {
             String line = br.readLine();
 
-            // If the first line looks like a header, skip it; otherwise we'll process it
+            // If the first line looks like a header, skip it
             boolean firstLineIsHeader = false;
             if (line != null) {
                 String headerProbe = line.toLowerCase();
@@ -134,7 +133,7 @@ public class User extends Person {
         return null;
     }
 
-    // Attempts to parse a CSV line into a User; returns null on any issue
+    // Attempts to parse a CSV line into a User
     private static User tryParseUser(String line) {
         try {
             String[] parts = line.split(",");

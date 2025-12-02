@@ -12,8 +12,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Controller for the login screen.
- * Handles user authentication and navigation to the main screen.
+ * Controller for the login screen
+ * Handles user authentication and navigation to the main screen
  * 
  * @author uzd052
  */
@@ -31,7 +31,7 @@ public class LoginScreenController {
     private static User currentUser;
 
     /**
-     * Initializes the controller.
+     * Initializes the controller
      */
     @FXML
     public void initialize() {
@@ -39,8 +39,8 @@ public class LoginScreenController {
     }
 
     /**
-     * Handles the login button action.
-     * Validates credentials and navigates to main screen if successful.
+     * Handles the login button action
+     * Validates credentials and navigates to main screen if successful
      */
     @FXML
     protected void onLoginButtonClick() {
@@ -73,7 +73,7 @@ public class LoginScreenController {
     }
 
     /**
-     * Displays an error message.
+     * Displays an error message
      * 
      * @param message the error message to display
      */
@@ -83,7 +83,7 @@ public class LoginScreenController {
     }
 
     /**
-     * Loads the main screen.
+     * Loads the main screen
      * 
      * @throws IOException if there's an error loading the FXML
      */
@@ -99,7 +99,7 @@ public class LoginScreenController {
     }
 
     /**
-     * Gets the currently logged-in user.
+     * Gets the currently logged in user
      * 
      * @return the current user
      */
@@ -108,7 +108,7 @@ public class LoginScreenController {
     }
 
     /**
-     * Clears the current user session.
+     * Clears the current user session
      */
     public static void clearSession() {
         currentUser = null;

@@ -14,8 +14,8 @@ import java.util.Comparator;
 import java.io.IOException;
 
 /**
- * Controller for the main screen.
- * Displays and manages the aid ship list with sorting and logout functionality.
+ * Controller for the main screen
+ * Displays and manages the aid ship list with sorting and logout functionality
  * 
  * @author uzd052
  */
@@ -39,8 +39,8 @@ public class MainScreenController {
     private AidShipManager shipManager;
 
     /**
-     * Initializes the controller.
-     * Loads ship data and sets up the UI.
+     * Initializes the controller
+     * Loads ship data and sets up the UI
      */
     @FXML
     public void initialize() {
@@ -76,7 +76,7 @@ public class MainScreenController {
     }
 
     /**
-     * Displays the ships in the list view.
+     * Displays the ships in the list view
      */
     private void displayShips() {
         shipListView.getItems().clear();
@@ -86,7 +86,7 @@ public class MainScreenController {
     }
 
     /**
-     * Sorts the ships based on the selected radio button.
+     * Sorts the ships based on the selected radio button
      */
     private void sortShips() {
         if (sortByNameRadio.isSelected()) {
@@ -104,7 +104,7 @@ public class MainScreenController {
     }
 
     /**
-     * Handles the sort button action.
+     * Handles the sort button action
      */
     @FXML
     protected void onSortButtonClick() {
@@ -112,8 +112,8 @@ public class MainScreenController {
     }
 
     /**
-     * Handles the logout button action.
-     * Clears the session and returns to the login screen.
+     * Handles the logout button action
+     * Clears the session and returns to the login screen
      */
     @FXML
     protected void onLogoutButtonClick() {
@@ -126,7 +126,7 @@ public class MainScreenController {
     }
 
     /**
-     * Loads the login screen.
+     * Loads the login screen
      * 
      * @throws IOException if there's an error loading the FXML
      */
@@ -142,7 +142,7 @@ public class MainScreenController {
     }
 
     /**
-     * Displays an alert dialog.
+     * Displays an alert dialog
      * 
      * @param title the alert title
      * @param message the alert message

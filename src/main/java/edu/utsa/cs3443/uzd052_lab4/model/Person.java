@@ -1,8 +1,8 @@
 package edu.utsa.cs3443.uzd052_lab4.model;
 
 /**
- * Represents a person with basic information.
- * Base class for User.
+ * Represents a person with basic information
+ * Base class for User
  * 
  * @author uzd052
  */
@@ -13,13 +13,13 @@ public class Person {
     private String phone;
 
     /**
-     * Default constructor.
+     * Default constructor
      */
     public Person() {
     }
 
     /**
-     * Constructs a Person with specified parameters.
+     * Constructs a Person with specified parameters
      * 
      * @param firstName the first name
      * @param lastName the last name
@@ -34,7 +34,7 @@ public class Person {
     }
 
     /**
-     * Gets the first name.
+     * Gets the first name
      * 
      * @return the first name
      */
@@ -43,7 +43,7 @@ public class Person {
     }
 
     /**
-     * Sets the first name.
+     * Sets the first name
      * 
      * @param firstName the first name
      */
@@ -52,7 +52,7 @@ public class Person {
     }
 
     /**
-     * Gets the last name.
+     * Gets the last name
      * 
      * @return the last name
      */
@@ -61,7 +61,7 @@ public class Person {
     }
 
     /**
-     * Sets the last name.
+     * Sets the last name
      * 
      * @param lastName the last name
      */
@@ -70,7 +70,7 @@ public class Person {
     }
 
     /**
-     * Gets the email.
+     * Gets the email
      * 
      * @return the email
      */
@@ -79,7 +79,7 @@ public class Person {
     }
 
     /**
-     * Sets the email.
+     * Sets the email
      * 
      * @param email the email
      */
@@ -88,7 +88,7 @@ public class Person {
     }
 
     /**
-     * Gets the phone number.
+     * Gets the phone number
      * 
      * @return the phone number
      */
@@ -97,7 +97,7 @@ public class Person {
     }
 
     /**
-     * Sets the phone number.
+     * Sets the phone number
      * 
      * @param phone the phone number
      */

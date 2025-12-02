@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Main application class for the Aid Ship Management System.
- * Launches the login screen on startup.
+ * Main application class for the Aid Ship Management System
+ * Launches the login screen on startup
  * 
  * @author uzd052
  */
@@ -34,7 +34,7 @@ public class AidShipApplication extends Application {
     }
 
     /**
-     * Gets the primary stage.
+     * Gets the primary stage
      * 
      * @return the primary stage
      */
@@ -43,7 +43,7 @@ public class AidShipApplication extends Application {
     }
 
     /**
-     * Main method to launch the application.
+     * Main method to launch the application
      * 
      * @param args command line arguments
      */

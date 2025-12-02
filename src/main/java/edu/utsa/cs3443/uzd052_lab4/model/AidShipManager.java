@@ -4,21 +4,35 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// manages the list of aid ships
+/**
+ * Manages a list of aid ships and handles loading and saving from CSV
+ */
 public class AidShipManager {
     private ArrayList<AidShip> aidShips;
     private String dataFilePath;
 
+    /**
+     * Creates a manager with default data path
+     */
     public AidShipManager() {
         this.aidShips = new ArrayList<>();
         this.dataFilePath = "data/aid_ships.csv";
     }
 
+    /**
+     * Adds an aid ship to the internal list
+     *
+     * @param aidShip the ship to add
+     */
     public void addAidShip(AidShip aidShip) {
         aidShips.add(aidShip);
     }
 
-    // loads ships from csv file
+    /**
+     * Loads ships from the CSV file
+     *
+     * @throws IOException when the file cannot be read
+     */
     public void loadAidShips() throws IOException {
         File file = new File(dataFilePath);
 
@@ -53,7 +67,12 @@ public class AidShipManager {
         scanner.close();
     }
 
-    // searches for ship by registration number
+    /**
+     * Finds a ship by registration number
+     *
+     * @param registrationNumber registration to search
+     * @return the ship if found or null
+     */
     public AidShip findAidShip(String registrationNumber) {
         for (int i = 0; i < aidShips.size(); i++) {
             if (aidShips.get(i).getRegistrationNumber().equalsIgnoreCase(registrationNumber)) {
@@ -63,7 +82,13 @@ public class AidShipManager {
         return null;
     }
 
-    // deletes ship and saves to file
+    /**
+     * Deletes a ship and saves the updated list
+     *
+     * @param aidShip the ship to delete
+     * @return true if the ship was removed
+     * @throws IOException if saving fails
+     */
     public boolean deleteAidShip(AidShip aidShip) throws IOException {
         boolean removed = aidShips.remove(aidShip);
         if (removed) {
@@ -72,6 +97,9 @@ public class AidShipManager {
         return removed;
     }
 
+    /**
+     * Writes the list of ships to the CSV file
+     */
     private void saveDataToFile() throws IOException {
         File file = new File(dataFilePath);
 
@@ -88,7 +116,12 @@ public class AidShipManager {
         writer.close();
     }
 
-    // parses csv line into AidShip
+    /**
+     * Parses a CSV line into an AidShip
+     *
+     * @param line a CSV line
+     * @return an AidShip or null
+     */
     private AidShip convertLineToAidShip(String line) {
         try {
             String[] parts = line.split(",");
@@ -117,6 +150,12 @@ public class AidShipManager {
         }
     }
 
+    /**
+     * Converts an AidShip to a CSV line
+     *
+     * @param ship the ship to convert
+     * @return CSV text for the ship
+     */
     private String convertAidShipToLine(AidShip ship) {
         return ship.getName() + "," +
                 ship.getRegistrationNumber() + "," +
@@ -128,6 +167,10 @@ public class AidShipManager {
                 ship.hasHelipad();
     }
 
+
+    /**
+     * Returns a readable list of managed ships
+     */
     @Override
     public String toString() {
         String result = "Aid Ship Manager:\n";
@@ -139,6 +182,11 @@ public class AidShipManager {
         return result;
     }
 
+    /**
+     * Gets the list of aid ships
+     *
+     * @return the list used by the UI
+     */
     public ArrayList<AidShip> getAidShipList() {
         return aidShips;
     }
