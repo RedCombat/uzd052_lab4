@@ -24,9 +24,11 @@ public class AidShipApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(
             AidShipApplication.class.getResource("layouts/login-screen.fxml")
         );
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        
+        Scene scene = new Scene(fxmlLoader.load(), 500, 600);
+
         stage.setTitle("GERO Aid Ship Management System");
+        stage.setMinWidth(500);
+        stage.setMinHeight(600);
         stage.setScene(scene);
         stage.show();
     }
